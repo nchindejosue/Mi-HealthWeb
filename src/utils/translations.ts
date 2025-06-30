@@ -1,3 +1,5 @@
+export type Language = 'en' | 'fr';
+
 export const translations = {
   en: {
     nav: {
@@ -7,7 +9,8 @@ export const translations = {
       pricing: "Pricing",
       faq: "FAQ",
       contact: "Contact Us",
-      getStarted: "Get Started"
+      getStarted: "Get Started",
+      download: "Download"
     },
     header: {
       badge: "The future of AI in Health",
@@ -15,10 +18,26 @@ export const translations = {
       title2: "HEALTH RECORDS,",
       title3: "YOUR",
       title4: "SECURE CONTROL",
-      subtitle1: "Empowering You With Personal",
-      subtitle2: "Health Records That Ensure A Future Of",
+      subtitle1: "Empowering You With Personal Health Records",
+      subtitle2: "That Ensure A Future Of Coordinated Care",
       getStarted: "Get Started",
       bookDemo: "Book a Demo"
+    },
+    download: {
+      badge: "Download Our App",
+      title: "Get Mi-HEALTH on Your Device",
+      subtitle: "Download our mobile app and take control of your health records wherever you go. Available on all major platforms.",
+      playStore: "Get it on Google Play",
+      appStore: "Download on the App Store",
+      qrCode: "Scan QR Code",
+      qrDescription: "Quick access to download",
+      comingSoon: "Coming Soon",
+      features: {
+        offline: "Offline Access",
+        sync: "Real-time Sync", 
+        security: "Biometric Security",
+        emergency: "Emergency Access"
+      }
     },
     userProfile: {
       badge: "What makes us unique",
@@ -41,8 +60,8 @@ export const translations = {
     },
     features: {
       badge: "What makes us unique",
-      title: "Mi-Health Is The Interface Solution That Prepares Your Medical Records In A Uniform Structure And Gives You The Opportunity To Share It With Ease",
-      subtitle: "Once You Login, You Can Easily Share Your Medical Records – With Different Health Centers Across Cameroon Seamlessly – With Mi-Health App",
+      title: "Mi-Health Is The Complete Solution For Your Medical Records",
+      subtitle: "Once You Login, You Can Easily Share Your Medical Records With Different Health Centers Across Cameroon Seamlessly",
       cards: {
         unite: {
           title: "Unite Your Fragmented Health Records",
@@ -52,37 +71,37 @@ export const translations = {
           title: "Maximum Security",
           subtitle: "Digitalization Without Compromising Security",
           points: [
-            "Secure and confidential data transmission through the use of encryption standards",
-            "100% compliant with the new data protection law, regularly reviewed by experts", 
+            "Secure and confidential data transmission through encryption standards",
+            "100% compliant with data protection laws, regularly reviewed by experts", 
             "Full transparency and traceability for every data query"
           ]
         },
         control: {
-          title: "Your Health, Your Hands",
-          description: "Rest assured your sensitive health information is protected with advanced encryption and robust privacy controls, fostering complete trust in your digital health journey"
+          title: "Your Health, Your Control",
+          description: "Rest assured your sensitive health information is protected with advanced encryption and robust privacy controls."
         },
         knowledge: {
           title: "Unlock Your Health Knowledge",
-          description: "Access personalized insights and clear educational resources directly within your app. Understand your conditions, prevention, and treatment options for a healthier life"
+          description: "Access personalized insights and clear educational resources directly within your app."
         }
       }
     },
     getStarted: {
       badge: "Get Exclusive Access To Our Future Release",
-      title: "Your Health Journey, Simplified in 3 Easy Steps",
+      title: "Your Health Journey, Simplified in 4 Easy Steps",
       subtitle: "Getting started with Mi-HEALTH is fast, intuitive, and designed for you.",
       steps: [
-        "Sign Up in Seconds Create your secure account in just 30 seconds and begin your healthier journey.",
-        "Enter or Import Your Data Manually input your medical history or seamlessly integrate with existing EHRs.",
-        "Share & Sync Across Clinics Effortlessly share your records with doctors and facilities for coordinated care.",
-        "Receive AI-Powered Insights Get personalized insights and reminders to help you make smarter health decisions."
+        "Sign Up in Seconds - Create your secure account in just 30 seconds and begin your healthier journey.",
+        "Enter or Import Your Data - Manually input your medical history or seamlessly integrate with existing EHRs.",
+        "Share & Sync Across Clinics - Effortlessly share your records with doctors and facilities for coordinated care.",
+        "Receive AI-Powered Insights - Get personalized insights and reminders to help you make smarter health decisions."
       ],
       getStarted: "Get Started",
       bookDemo: "Book a Demo"
     },
     security: {
       badge: "Security and Privacy",
-      title: "Secure and data protection compliant",
+      title: "Secure and Data Protection Compliant",
       subtitle: "Mi-Health ensures the secure transmission of your sensitive practice data – anytime, anywhere.",
       features: [
         {
@@ -95,11 +114,11 @@ export const translations = {
         },
         {
           title: "Freedom Of Choice - 100%",
-          description: "Mi-Health gives you the freedom to decide where you want to share which data – always with the necessary patient consent."
+          description: "Mi-Health gives you the freedom to decide where you want to share which data."
         },
         {
           title: "End-to-end Encryption",
-          description: "All your sensitive health information is secured with AES-256 encryption at rest and TLS 1.3 during transmission"
+          description: "All your sensitive health information is secured with AES-256 encryption at rest and TLS 1.3 during transmission."
         },
         {
           title: "Full Transparency Of Data Queries",
@@ -116,7 +135,7 @@ export const translations = {
     pricing: {
       badge: "Flexible Pricing For Everyone",
       title: "Simple Pricing and Transparent for Everyone",
-      subtitle: "Flexible Plans to Fit Your Needs\nChoose the Mi-HEALTH plan that's right for you or your organization.",
+      subtitle: "Flexible Plans to Fit Your Needs. Choose the Mi-HEALTH plan that's right for you or your organization.",
       monthly: "Monthly Pricing",
       annual: "Annual Pricing",
       plans: {
@@ -134,11 +153,11 @@ export const translations = {
         pro: {
           name: "Pro Plan",
           description: "For healthcare providers and small clinics.",
-          popular: "POPULAR TARIFFS",
+          popular: "POPULAR CHOICE",
           features: [
             "All Individual features",
             "Integrated patient management",
-            "Advance AI Functionalities", 
+            "Advanced AI Functionalities", 
             "Seamless EHR integration",
             "Data analytics & reporting tools",
             "Priority support"
@@ -146,44 +165,44 @@ export const translations = {
         },
         limitless: {
           name: "Limitless Plan",
-          description: "Essential tools for small teams so as to increase productivity",
+          description: "Essential tools for small teams to increase productivity.",
           features: [
             "All Pro features",
             "Custom integrations",
             "Dedicated account manager",
             "Advanced security features",
-            "Standard Customer Service"
+            "24/7 Customer Service"
           ]
         }
       },
-      perUser: "Per Users\nper Months",
+      perUser: "Per User per Month",
       getStarted: "Get Started",
       tryFree: "Try For Free for 30 Days",
       contactSales: "Contact Sales",
-      characteristics: "Characteristics",
-      characteristicsDesc: "These are the functionalities you will obtain"
+      characteristics: "Features Included",
+      characteristicsDesc: "These are the functionalities you will get"
     },
     team: {
       badge: "Our Team",
       title: "Meet The Dynamic Team Behind NHA HEALTHTECH",
-      subtitle: "Mi-HEALTH has been supported by various experts since its inception:"
+      subtitle: "Mi-HEALTH has been supported by various experts since its inception."
     },
     testimonials: {
-      badge: "Get Exclusive Access To Our Future Release",
+      badge: "Customer Stories",
       title: "Hear how Mi-HEALTH is transforming healthcare for patients and providers in Cameroon.",
       quotes: [
         "Mi-HEALTH has truly given me control over my medical history. No more lost papers or forgotten details – it's all there, accessible from my phone. A game-changer for my chronic condition management!",
         "The ease of sharing information with different specialists means I finally feel understood by my entire care team. My family history and allergies are always at their fingertips, leading to better, safer care.",
-        "The ease of sharing information with different specialists means I finally feel understood by my entire care team. My family history and allergies are always at their fingertips, leading to better, safer care."
+        "As a healthcare provider, Mi-HEALTH has streamlined our patient management process. The integration with our existing systems was seamless, and our patients love the convenience."
       ]
     },
     faq: {
-      badge: "All What You Need To know to Get Started",
+      badge: "All What You Need To Know to Get Started",
       title: "Find The Answers To All Your Questions",
-      subtitle: "Go through the frequently asked questions concerning Mi-HEALTH. Need help? Contact our team for support at all instance",
+      subtitle: "Go through the frequently asked questions concerning Mi-HEALTH. Need help? Contact our team for support.",
       questions: [
         {
-          question: "What is Mi-Health",
+          question: "What is Mi-Health?",
           answer: "Mi-Health is a comprehensive digital health platform developed by NHA-HEALTHTECH, a HealthTech startup registered in Cameroon. We're in the pre-seed phase, created to develop and make available health technology and digital health solutions for individuals/patients and healthcare facilities in Africa, particularly in Cameroon."
         },
         {
@@ -213,59 +232,53 @@ export const translations = {
       ]
     },
     contact: {
-      badge: "Let's Get in Touch | Contact Our Team",
+      badge: "Let's Get in Touch",
       title: "Need Some Help? Let's Get In Touch & Leave Us A Message!",
       subtitle: "Whether it is for support, commercial demands or partnership opportunities, our team is here to help you out.",
       form: {
-        title: "For Teams & Startups",
-        accountName: "Account Name",
-        accountNamePlaceholder: "Enter your Account name",
-        email: "Email",
-        emailPlaceholder: "Enter your Email",
-        telephone: "Telephone", 
-        telephonePlaceholder: "Enter your Phone Number",
+        title: "Send us a Message",
+        accountName: "Full Name",
+        accountNamePlaceholder: "Enter your full name",
+        email: "Email Address",
+        emailPlaceholder: "Enter your email address",
+        telephone: "Phone Number", 
+        telephonePlaceholder: "Enter your phone number",
         message: "Message",
-        messagePlaceholder: "Enter your Message",
-        send: "Send a Message"
+        messagePlaceholder: "Tell us how we can help you",
+        send: "Send Message"
       },
       info: {
-        title: "Contact our team",
+        title: "Contact Information",
         email: {
-          title: "You can send us an e-mail here.",
-          content: "devguyuix@gmail.com. Please, don't include pinyin or phonetic symbols"
+          title: "Email Us",
+          content: "devguyuix@gmail.com"
         },
         phone: {
-          title: "Or Call us",
-          content: "+237 654 935 347 - +237 621 614 304"
+          title: "Call Us",
+          content: "+237 654 935 347"
         },
         location: {
-          title: "Location",
-          content: "Byiem Assi Acca-cia, behind the main MTN house"
+          title: "Visit Us",
+          content: "Byiem Assi Acca-cia, Yaoundé, Cameroon"
         }
       }
     },
     about: {
-      badge: "Join Thousands Of People In The Waiting List For an Exclusive Access !",
-      title: "Join the Waiting List and Be Among The Exclusive First To Discover !",
-      subtitle: "Register and secure your spot to be the first informed when the product is launched, Special promotions and Exclusive Features. Join our Waiting List Today !",
-      emailPlaceholder: "Enter Email",
+      badge: "Join Thousands Of People In The Waiting List For Exclusive Access!",
+      title: "Join the Waiting List and Be Among The First To Discover!",
+      subtitle: "Register and secure your spot to be the first informed when the product is launched. Get special promotions and exclusive features.",
+      emailPlaceholder: "Enter your email address",
       joinWaitlist: "Join Waiting List"
     },
-    download: {
-      badge: "Download Our App",
-      title: "Get Mi-HEALTH on Your Device",
-      subtitle: "Download our mobile app and take control of your health records wherever you go.",
-      playStore: "Get it on Google Play",
-      appStore: "Download on the App Store",
-      qrCode: "Scan QR Code to Download"
-    },
     footer: {
-      description: "Mi-Health is a comprehensive digital health platform developed by NHA-HEALTHTECH, a HealthTech startup registered in Cameroon. We're in the pre-seed phase, created to develop and make available health technology and digital health solutions for individuals/patients and healthcare facilities in Africa, particularly in Cameroon.",
-      credentials: "Credentials",
+      description: "Mi-Health is a comprehensive digital health platform developed by NHA-HEALTHTECH, a HealthTech startup registered in Cameroon. We're creating innovative health technology solutions for individuals and healthcare facilities across Africa.",
+      credentials: "Contact Information",
       email: "Email",
-      telephone: "Telephone",
-      since: "SINCE. 2025",
-      rights: "©MI-HEALTH. All rights reserved"
+      telephone: "Phone",
+      since: "SINCE 2025",
+      rights: "©MI-HEALTH. All rights reserved",
+      developedBy: "Developed by",
+      visitWebsite: "Visit our startup website"
     }
   },
   fr: {
@@ -276,7 +289,8 @@ export const translations = {
       pricing: "Tarification",
       faq: "FAQ",
       contact: "Nous Contacter",
-      getStarted: "Commencer"
+      getStarted: "Commencer",
+      download: "Télécharger"
     },
     header: {
       badge: "L'avenir de l'IA dans la Santé",
@@ -284,10 +298,26 @@ export const translations = {
       title2: "DOSSIERS MÉDICAUX,",
       title3: "VOTRE",
       title4: "CONTRÔLE SÉCURISÉ",
-      subtitle1: "Vous Donner le Pouvoir avec des",
-      subtitle2: "Dossiers de Santé Personnels qui Assurent un Avenir de",
+      subtitle1: "Vous Donner le Pouvoir avec des Dossiers de Santé Personnels",
+      subtitle2: "Qui Assurent un Avenir de Soins Coordonnés",
       getStarted: "Commencer",
       bookDemo: "Réserver une Démo"
+    },
+    download: {
+      badge: "Téléchargez Notre App",
+      title: "Obtenez Mi-HEALTH sur Votre Appareil",
+      subtitle: "Téléchargez notre application mobile et prenez le contrôle de vos dossiers de santé où que vous alliez. Disponible sur toutes les plateformes principales.",
+      playStore: "Disponible sur Google Play",
+      appStore: "Télécharger sur l'App Store",
+      qrCode: "Scanner le Code QR",
+      qrDescription: "Accès rapide au téléchargement",
+      comingSoon: "Bientôt Disponible",
+      features: {
+        offline: "Accès Hors Ligne",
+        sync: "Synchronisation Temps Réel",
+        security: "Sécurité Biométrique",
+        emergency: "Accès d'Urgence"
+      }
     },
     userProfile: {
       badge: "Ce qui nous rend unique",
@@ -310,8 +340,8 @@ export const translations = {
     },
     features: {
       badge: "Ce qui nous rend unique",
-      title: "Mi-Health Est La Solution d'Interface Qui Prépare Vos Dossiers Médicaux Dans Une Structure Uniforme Et Vous Donne L'Opportunité De Les Partager Facilement",
-      subtitle: "Une Fois Connecté, Vous Pouvez Facilement Partager Vos Dossiers Médicaux – Avec Différents Centres de Santé à Travers le Cameroun Sans Effort – Avec l'App Mi-Health",
+      title: "Mi-Health Est La Solution Complète Pour Vos Dossiers Médicaux",
+      subtitle: "Une Fois Connecté, Vous Pouvez Facilement Partager Vos Dossiers Médicaux Avec Différents Centres de Santé à Travers le Cameroun",
       cards: {
         unite: {
           title: "Unifiez Vos Dossiers de Santé Fragmentés",
@@ -321,37 +351,37 @@ export const translations = {
           title: "Sécurité Maximale",
           subtitle: "Numérisation Sans Compromettre la Sécurité",
           points: [
-            "Transmission de données sécurisée et confidentielle grâce à l'utilisation de normes de chiffrement",
-            "100% conforme à la nouvelle loi sur la protection des données, régulièrement révisée par des experts",
+            "Transmission de données sécurisée et confidentielle grâce aux normes de chiffrement",
+            "100% conforme aux lois sur la protection des données, régulièrement révisée par des experts",
             "Transparence totale et traçabilité pour chaque requête de données"
           ]
         },
         control: {
-          title: "Votre Santé, Vos Mains",
-          description: "Soyez assuré que vos informations de santé sensibles sont protégées avec un chiffrement avancé et des contrôles de confidentialité robustes, favorisant une confiance complète dans votre parcours de santé numérique"
+          title: "Votre Santé, Votre Contrôle",
+          description: "Soyez assuré que vos informations de santé sensibles sont protégées avec un chiffrement avancé et des contrôles de confidentialité robustes."
         },
         knowledge: {
           title: "Débloquez Vos Connaissances en Santé",
-          description: "Accédez à des insights personnalisés et des ressources éducatives claires directement dans votre application. Comprenez vos conditions, la prévention et les options de traitement pour une vie plus saine"
+          description: "Accédez à des insights personnalisés et des ressources éducatives claires directement dans votre application."
         }
       }
     },
     getStarted: {
       badge: "Obtenez un Accès Exclusif à Notre Future Version",
-      title: "Votre Parcours de Santé, Simplifié en 3 Étapes Faciles",
+      title: "Votre Parcours de Santé, Simplifié en 4 Étapes Faciles",
       subtitle: "Commencer avec Mi-HEALTH est rapide, intuitif et conçu pour vous.",
       steps: [
-        "Inscrivez-vous en Quelques Secondes Créez votre compte sécurisé en seulement 30 secondes et commencez votre parcours plus sain.",
-        "Saisissez ou Importez Vos Données Saisissez manuellement votre historique médical ou intégrez-vous facilement avec les DSE existants.",
-        "Partagez et Synchronisez Entre Cliniques Partagez sans effort vos dossiers avec les médecins et établissements pour des soins coordonnés.",
-        "Recevez des Insights Alimentés par l'IA Obtenez des insights personnalisés et des rappels pour vous aider à prendre des décisions de santé plus intelligentes."
+        "Inscrivez-vous en Quelques Secondes - Créez votre compte sécurisé en seulement 30 secondes et commencez votre parcours plus sain.",
+        "Saisissez ou Importez Vos Données - Saisissez manuellement votre historique médical ou intégrez-vous facilement avec les DSE existants.",
+        "Partagez et Synchronisez Entre Cliniques - Partagez sans effort vos dossiers avec les médecins et établissements pour des soins coordonnés.",
+        "Recevez des Insights Alimentés par l'IA - Obtenez des insights personnalisés et des rappels pour vous aider à prendre des décisions de santé plus intelligentes."
       ],
       getStarted: "Commencer",
       bookDemo: "Réserver une Démo"
     },
     security: {
       badge: "Sécurité et Confidentialité",
-      title: "Sécurisé et conforme à la protection des données",
+      title: "Sécurisé et Conforme à la Protection des Données",
       subtitle: "Mi-Health assure la transmission sécurisée de vos données de pratique sensibles – à tout moment, n'importe où.",
       features: [
         {
@@ -364,11 +394,11 @@ export const translations = {
         },
         {
           title: "Liberté de Choix - 100%",
-          description: "Mi-Health vous donne la liberté de décider où vous voulez partager quelles données – toujours avec le consentement nécessaire du patient."
+          description: "Mi-Health vous donne la liberté de décider où vous voulez partager quelles données."
         },
         {
           title: "Chiffrement de Bout en Bout",
-          description: "Toutes vos informations de santé sensibles sont sécurisées avec un chiffrement AES-256 au repos et TLS 1.3 pendant la transmission"
+          description: "Toutes vos informations de santé sensibles sont sécurisées avec un chiffrement AES-256 au repos et TLS 1.3 pendant la transmission."
         },
         {
           title: "Transparence Totale des Requêtes de Données",
@@ -385,7 +415,7 @@ export const translations = {
     pricing: {
       badge: "Tarification Flexible Pour Tous",
       title: "Tarification Simple et Transparente pour Tous",
-      subtitle: "Plans Flexibles pour Répondre à Vos Besoins\nChoisissez le plan Mi-HEALTH qui vous convient ou convient à votre organisation.",
+      subtitle: "Plans Flexibles pour Répondre à Vos Besoins. Choisissez le plan Mi-HEALTH qui vous convient ou convient à votre organisation.",
       monthly: "Tarification Mensuelle",
       annual: "Tarification Annuelle",
       plans: {
@@ -403,7 +433,7 @@ export const translations = {
         pro: {
           name: "Plan Pro",
           description: "Pour les prestataires de soins de santé et petites cliniques.",
-          popular: "TARIFS POPULAIRES",
+          popular: "CHOIX POPULAIRE",
           features: [
             "Toutes les fonctionnalités Individuelles",
             "Gestion intégrée des patients",
@@ -415,44 +445,44 @@ export const translations = {
         },
         limitless: {
           name: "Plan Illimité",
-          description: "Outils essentiels pour les petites équipes afin d'augmenter la productivité",
+          description: "Outils essentiels pour les petites équipes afin d'augmenter la productivité.",
           features: [
             "Toutes les fonctionnalités Pro",
             "Intégrations personnalisées",
             "Gestionnaire de compte dédié",
             "Fonctionnalités de sécurité avancées",
-            "Service Client Standard"
+            "Service Client 24/7"
           ]
         }
       },
-      perUser: "Par Utilisateur\npar Mois",
+      perUser: "Par Utilisateur par Mois",
       getStarted: "Commencer",
       tryFree: "Essayer Gratuitement pendant 30 Jours",
       contactSales: "Contacter les Ventes",
-      characteristics: "Caractéristiques",
+      characteristics: "Fonctionnalités Incluses",
       characteristicsDesc: "Voici les fonctionnalités que vous obtiendrez"
     },
     team: {
       badge: "Notre Équipe",
       title: "Rencontrez l'Équipe Dynamique Derrière NHA HEALTHTECH",
-      subtitle: "Mi-HEALTH a été soutenu par divers experts depuis sa création :"
+      subtitle: "Mi-HEALTH a été soutenu par divers experts depuis sa création."
     },
     testimonials: {
-      badge: "Obtenez un Accès Exclusif à Notre Future Version",
+      badge: "Témoignages Clients",
       title: "Découvrez comment Mi-HEALTH transforme les soins de santé pour les patients et prestataires au Cameroun.",
       quotes: [
         "Mi-HEALTH m'a vraiment donné le contrôle sur mon historique médical. Plus de papiers perdus ou de détails oubliés – tout est là, accessible depuis mon téléphone. Un changement de donne pour la gestion de ma condition chronique !",
         "La facilité de partager des informations avec différents spécialistes signifie que je me sens enfin compris par toute mon équipe de soins. Mon historique familial et mes allergies sont toujours à portée de main, conduisant à des soins meilleurs et plus sûrs.",
-        "La facilité de partager des informations avec différents spécialistes signifie que je me sens enfin compris par toute mon équipe de soins. Mon historique familial et mes allergies sont toujours à portée de main, conduisant à des soins meilleurs et plus sûrs."
+        "En tant que prestataire de soins de santé, Mi-HEALTH a rationalisé notre processus de gestion des patients. L'intégration avec nos systèmes existants était transparente, et nos patients adorent la commodité."
       ]
     },
     faq: {
       badge: "Tout Ce Que Vous Devez Savoir Pour Commencer",
       title: "Trouvez les Réponses à Toutes Vos Questions",
-      subtitle: "Parcourez les questions fréquemment posées concernant Mi-HEALTH. Besoin d'aide ? Contactez notre équipe pour un support à tout moment",
+      subtitle: "Parcourez les questions fréquemment posées concernant Mi-HEALTH. Besoin d'aide ? Contactez notre équipe pour un support.",
       questions: [
         {
-          question: "Qu'est-ce que Mi-Health",
+          question: "Qu'est-ce que Mi-Health ?",
           answer: "Mi-Health est une plateforme de santé numérique complète développée par NHA-HEALTHTECH, une startup HealthTech enregistrée au Cameroun. Nous sommes en phase de pré-amorçage, créée pour développer et rendre disponibles des technologies de santé et des solutions de santé numérique pour les individus/patients et les établissements de soins de santé en Afrique, particulièrement au Cameroun."
         },
         {
@@ -482,59 +512,57 @@ export const translations = {
       ]
     },
     contact: {
-      badge: "Entrons en Contact | Contactez Notre Équipe",
+      badge: "Entrons en Contact",
       title: "Besoin d'Aide ? Entrons en Contact et Laissez-nous un Message !",
       subtitle: "Que ce soit pour le support, les demandes commerciales ou les opportunités de partenariat, notre équipe est là pour vous aider.",
       form: {
-        title: "Pour les Équipes et Startups",
-        accountName: "Nom du Compte",
-        accountNamePlaceholder: "Entrez le nom de votre compte",
-        email: "Email",
-        emailPlaceholder: "Entrez votre Email",
-        telephone: "Téléphone",
-        telephonePlaceholder: "Entrez votre Numéro de Téléphone",
+        title: "Envoyez-nous un Message",
+        accountName: "Nom Complet",
+        accountNamePlaceholder: "Entrez votre nom complet",
+        email: "Adresse Email",
+        emailPlaceholder: "Entrez votre adresse email",
+        telephone: "Numéro de Téléphone",
+        telephonePlaceholder: "Entrez votre numéro de téléphone",
         message: "Message",
-        messagePlaceholder: "Entrez votre Message",
-        send: "Envoyer un Message"
+        messagePlaceholder: "Dites-nous comment nous pouvons vous aider",
+        send: "Envoyer le Message"
       },
       info: {
-        title: "Contactez notre équipe",
+        title: "Informations de Contact",
         email: {
-          title: "Vous pouvez nous envoyer un e-mail ici.",
-          content: "devguyuix@gmail.com. S'il vous plaît, n'incluez pas de pinyin ou de symboles phonétiques"
+          title: "Envoyez-nous un Email",
+          content: "devguyuix@gmail.com"
         },
         phone: {
-          title: "Ou Appelez-nous",
-          content: "+237 654 935 347 - +237 621 614 304"
+          title: "Appelez-nous",
+          content: "+237 654 935 347"
         },
         location: {
-          title: "Localisation",
-          content: "Byiem Assi Acca-cia, derrière la maison principale MTN"
+          title: "Visitez-nous",
+          content: "Byiem Assi Acca-cia, Yaoundé, Cameroun"
         }
       }
     },
     about: {
       badge: "Rejoignez des Milliers de Personnes sur la Liste d'Attente pour un Accès Exclusif !",
-      title: "Rejoignez la Liste d'Attente et Soyez Parmi les Premiers Exclusifs à Découvrir !",
-      subtitle: "Inscrivez-vous et sécurisez votre place pour être le premier informé quand le produit sera lancé, Promotions Spéciales et Fonctionnalités Exclusives. Rejoignez notre Liste d'Attente Aujourd'hui !",
-      emailPlaceholder: "Entrez l'Email",
+      title: "Rejoignez la Liste d'Attente et Soyez Parmi les Premiers à Découvrir !",
+      subtitle: "Inscrivez-vous et sécurisez votre place pour être le premier informé quand le produit sera lancé. Obtenez des promotions spéciales et des fonctionnalités exclusives.",
+      emailPlaceholder: "Entrez votre adresse email",
       joinWaitlist: "Rejoindre la Liste d'Attente"
     },
-    download: {
-      badge: "Téléchargez Notre App",
-      title: "Obtenez Mi-HEALTH sur Votre Appareil",
-      subtitle: "Téléchargez notre application mobile et prenez le contrôle de vos dossiers de santé où que vous alliez.",
-      playStore: "Disponible sur Google Play",
-      appStore: "Télécharger sur l'App Store",
-      qrCode: "Scanner le Code QR pour Télécharger"
-    },
     footer: {
-      description: "Mi-Health est une plateforme de santé numérique complète développée par NHA-HEALTHTECH, une startup HealthTech enregistrée au Cameroun. Nous sommes en phase de pré-amorçage, créée pour développer et rendre disponibles des technologies de santé et des solutions de santé numérique pour les individus/patients et les établissements de soins de santé en Afrique, particulièrement au Cameroun.",
-      credentials: "Références",
+      description: "Mi-Health est une plateforme de santé numérique complète développée par NHA-HEALTHTECH, une startup HealthTech enregistrée au Cameroun. Nous créons des solutions technologiques de santé innovantes pour les individus et les établissements de soins de santé à travers l'Afrique.",
+      credentials: "Informations de Contact",
       email: "Email",
       telephone: "Téléphone",
-      since: "DEPUIS. 2025",
-      rights: "©MI-HEALTH. Tous droits réservés"
+      since: "DEPUIS 2025",
+      rights: "©MI-HEALTH. Tous droits réservés",
+      developedBy: "Développé par",
+      visitWebsite: "Visitez notre site web de startup"
     }
   }
+};
+
+export const useTranslation = (language: Language) => {
+  return translations[language];
 };

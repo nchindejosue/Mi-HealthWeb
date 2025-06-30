@@ -1,3 +1,5 @@
+@import './src/styles/design-system.css';
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -8,6 +10,7 @@
 }
 
 :root {
+  /* Legacy CSS Variables for compatibility */
   --caption-semi-bold-font-family: "Inter", Helvetica;
   --caption-semi-bold-font-size: 12px;
   --caption-semi-bold-font-style: normal;
@@ -105,15 +108,6 @@
   --heading-h6-semi-bold-letter-spacing: -0.38px;
   --heading-h6-semi-bold-line-height: 23px;
   --light-green: rgba(246, 255, 254, 1);
-  --neutral-gray-100: rgba(241, 245, 249, 1);
-  --neutral-gray-300: rgba(203, 213, 225, 1);
-  --neutral-gray-400: rgba(148, 163, 184, 1);
-  --neutral-gray-50: rgba(248, 250, 252, 1);
-  --neutral-gray-500: rgba(100, 116, 139, 1);
-  --neutral-gray-600: rgba(71, 85, 105, 1);
-  --neutral-gray-700: rgba(51, 65, 85, 1);
-  --neutral-gray-900: rgba(15, 23, 42, 1);
-  --neutralgray-200: rgba(226, 232, 240, 1);
   --paragraph-p1-regular-font-family: "Inter", Helvetica;
   --paragraph-p1-regular-font-size: 14px;
   --paragraph-p1-regular-font-style: normal;
@@ -144,14 +138,6 @@
   --paragraph-p3-semi-bold-font-weight: 600;
   --paragraph-p3-semi-bold-letter-spacing: 0px;
   --paragraph-p3-semi-bold-line-height: 22px;
-  --primaryblue-100: rgba(187, 202, 243, 1);
-  --primaryblue-50: rgba(232, 237, 251, 1);
-  --project-blue: rgba(5, 165, 206, 1);
-  --project-green: rgba(93, 187, 173, 1);
-  --project-primary-dark: rgba(5, 40, 49, 1);
-  --shade-project-blue: rgba(10, 145, 180, 1);
-  --shadesblack: rgba(0, 0, 0, 1);
-  --shadeswhite: rgba(255, 255, 255, 1);
   --shadow-XS: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
   --subheading-semi-bold-font-family: "Inter", Helvetica;
   --subheading-semi-bold-font-size: 20px;
@@ -159,12 +145,7 @@
   --subheading-semi-bold-font-weight: 600;
   --subheading-semi-bold-letter-spacing: 0px;
   --subheading-semi-bold-line-height: 28px;
-  --tint-project-blue: rgba(70, 214, 251, 1);
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   :root {
@@ -240,171 +221,55 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
-}
-
-/* Custom animations */
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  html {
+    scroll-behavior: smooth;
   }
 }
 
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
+/* Responsive utilities */
+@layer utilities {
+  .text-responsive-display {
+    @apply text-4xl md:text-5xl lg:text-6xl;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .text-responsive-h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
   }
-}
-
-@keyframes slide-left {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
+  
+  .text-responsive-h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  
+  .text-responsive-h3 {
+    @apply text-xl md:text-2xl lg:text-3xl;
   }
-}
-
-@keyframes slide-right {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
+  
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-24;
   }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-@keyframes text-glow {
-  0%, 100% {
-    text-shadow: 0 0 5px rgba(5, 165, 206, 0.3);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(5, 165, 206, 0.6), 0 0 30px rgba(5, 165, 206, 0.4);
-  }
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  51%, 100% {
-    opacity: 0;
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out;
-}
-
-.animate-slide-up {
-  animation: slide-up 0.8s ease-out;
-}
-
-.animate-slide-left {
-  animation: slide-left 0.8s ease-out;
-}
-
-.animate-slide-right {
-  animation: slide-right 0.8s ease-out;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-bounce-slow {
-  animation: bounce-slow 2s ease-in-out infinite;
-}
-
-.animate-spin-slow {
-  animation: spin-slow 8s linear infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 3s ease-in-out infinite;
-}
-
-.animate-text-glow {
-  animation: text-glow 2s ease-in-out infinite;
-}
-
-.animate-blink {
-  animation: blink 1s infinite;
 }
 
 /* Animation delays */
-.animation-delay-200 {
-  animation-delay: 200ms;
+@layer utilities {
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-1000 { animation-delay: 1000ms; }
 }
 
-.animation-delay-400 {
-  animation-delay: 400ms;
-}
-
-.animation-delay-600 {
-  animation-delay: 600ms;
-}
-
-.animation-delay-800 {
-  animation-delay: 800ms;
-}
-
-.animation-delay-1000 {
-  animation-delay: 1000ms;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2000ms;
+/* Focus ring utility */
+@layer utilities {
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-project-blue focus-visible:ring-offset-2;
+  }
 }
