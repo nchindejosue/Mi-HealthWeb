@@ -1,255 +1,179 @@
 import React from "react";
-import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
+import { Section } from "../../../../components/ui/Section";
+import { SectionHeader } from "../../../../components/ui/SectionHeader";
 import { Separator } from "../../../../components/ui/separator";
-import {
-  ToggleGroup,
-  ToggleGroupItem,
-} from "../../../../components/ui/toggle-group";
+import { ToggleGroup, ToggleGroupItem } from "../../../../components/ui/toggle-group";
+import { useLanguage } from "../../../../hooks/useLanguage";
+import { translations } from "../../../../utils/translations";
+import { User, Briefcase, Globe, Check, Star } from "lucide-react";
 
 export const PricingSection = (): JSX.Element => {
-  // Pricing plan data
+  const { language } = useLanguage();
+  const t = translations[language].pricing;
+
   const pricingPlans = [
     {
       id: "individual",
-      name: "Individual Plan",
-      description: "Perfect for personal health management.",
+      name: t.plans.individual.name,
+      description: t.plans.individual.description,
       price: "0",
       currency: "XAF",
-      iconSrc: "/icon-1.png",
+      icon: <User className="w-8 h-8" />,
       popular: false,
-      bgColor: "bg-shadeswhite",
-      textColor: "text-neutral-gray-900",
-      secondaryTextColor: "text-neutral-gray-500",
-      features: [
-        "Basic PHR features",
-        "Secure data storage",
-        "Limited sharing capabilities",
-        "Access to educational resources",
-        "Basic AI functionalities",
-      ],
+      features: t.plans.individual.features,
     },
     {
       id: "pro",
-      name: "Pro Plan",
-      description: "For healthcare providers and small clinics.",
+      name: t.plans.pro.name,
+      description: t.plans.pro.description,
       price: "10K",
       currency: "XAF",
-      iconSrc: "/icon-2.png",
+      icon: <Briefcase className="w-8 h-8" />,
       popular: true,
-      bgColor: "bg-[#02201b]",
-      textColor: "text-neutral-gray-100",
-      secondaryTextColor: "text-neutral-gray-400",
-      features: [
-        "All Individual features",
-        "Integrated patient management",
-        "Advance AI Functionalities",
-        "Seamless EHR integration",
-        "Data analytics & reporting tools",
-        "Priority support",
-      ],
+      features: t.plans.pro.features,
     },
     {
       id: "limitless",
-      name: "Limitless Plan",
-      description:
-        "Essential tools for small teams so as to increase productivity",
+      name: t.plans.limitless.name,
+      description: t.plans.limitless.description,
       price: "15K",
       currency: "XAF",
-      iconSrc: "/icon-3.png",
+      icon: <Globe className="w-8 h-8" />,
       popular: false,
-      bgColor: "bg-shadeswhite",
-      textColor: "text-neutral-gray-900",
-      secondaryTextColor: "text-neutral-gray-500",
-      features: [
-        "All Pro features",
-        "Custom integrations",
-        "Dedicated account manager",
-        "Advanced security features",
-        "Standard Customer Service",
-      ],
+      features: t.plans.limitless.features,
     },
   ];
 
   return (
-    <section className="flex flex-col items-center gap-16 pt-8 pb-20 px-0 relative overflow-hidden">
+    <Section id="pricing" background="secondary">
       {/* Background gradients */}
-      <div className="absolute w-full h-[908px] top-[795px] left-0">
-        <div className="absolute w-[546px] h-[396px] top-[512px] left-0 bg-[#05a5ce80] rounded-[1000px] blur-[275px]" />
-        <div className="absolute w-[482px] h-[414px] top-[414px] right-0 bg-[#05a5ce80] blur-[275px] rounded-[1000px]" />
-        <div className="absolute w-[493px] h-[600px] top-0 left-1/2 -translate-x-1/2 blur-[250px] bg-[linear-gradient(55deg,rgba(251,130,24,1)_22%,rgba(241,54,54,1)_51%,rgba(154,29,203,1)_75%)] rounded-[1000px]" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute w-96 h-96 bg-gradient-to-r from-project-blue/10 to-project-green/10 rounded-full blur-3xl animate-pulse top-20 left-10"></div>
+        <div className="absolute w-80 h-80 bg-gradient-to-r from-project-green/10 to-project-blue/10 rounded-full blur-3xl animate-pulse bottom-20 right-10 delay-1000"></div>
       </div>
 
-      {/* Header section */}
-      <div className="flex flex-col items-center gap-10 px-[120px] py-0 relative w-full">
-        <div className="flex w-[278px] items-center justify-center gap-3 pl-3.5 pr-[18px] py-1.5 relative rounded-[999px] overflow-hidden border border-solid border-slate-200 [background:radial-gradient(50%_50%_at_50%_50%,rgba(218,249,251,1)_0%,rgba(230,246,247,1)_13%,rgba(244,254,255,1)_30%,rgba(251,253,253,1)_58%,rgba(236,247,252,1)_68%,rgba(238,244,246,1)_80%,rgba(218,249,251,1)_100%)]">
-          <div className="gap-1 px-3 py-0 bg-shadeswhite rounded-[100px] border-[0.75px] border-solid border-[#bbcaf3] inline-flex items-center relative">
-            <div className="relative w-[5px] h-[5px] bg-project-blue rounded-[100px] blur-[1.5px]" />
-            <div className="relative w-fit mt-[-0.75px] font-paragraph-p2-regular font-[number:var(--paragraph-p2-regular-font-weight)] text-project-blue text-[length:var(--paragraph-p2-regular-font-size)] tracking-[var(--paragraph-p2-regular-letter-spacing)] leading-[var(--paragraph-p2-regular-line-height)] whitespace-nowrap [font-style:var(--paragraph-p2-regular-font-style)]">
-              NHA
-            </div>
-          </div>
-          <div className="relative flex-1 font-paragraph-p1-regular font-[number:var(--paragraph-p1-regular-font-weight)] text-[#1e293bbf] text-[length:var(--paragraph-p1-regular-font-size)] text-center tracking-[var(--paragraph-p1-regular-letter-spacing)] leading-[var(--paragraph-p1-regular-line-height)] [font-style:var(--paragraph-p1-regular-font-style)]">
-            Flexible Pricing For Everyone
-          </div>
-          <div className="absolute w-[26px] h-[199px] top-[-79px] left-[-35px] bg-[#fffffff2] rotate-[26.88deg] blur-[2.5px]" />
-        </div>
+      <div className="relative z-10 space-y-12 md:space-y-16">
+        <SectionHeader
+          badge={t.badge}
+          title={t.title}
+          subtitle={t.subtitle}
+          centered
+        />
 
-        <div className="flex flex-col items-center justify-center gap-9 relative w-full">
-          <h1 className="relative w-[828px] mt-[-1.00px] font-heading-h1-semi-bold font-[number:var(--heading-h1-semi-bold-font-weight)] text-project-blue text-[length:var(--heading-h1-semi-bold-font-size)] text-center tracking-[var(--heading-h1-semi-bold-letter-spacing)] leading-[var(--heading-h1-semi-bold-line-height)] [font-style:var(--heading-h1-semi-bold-font-style)]">
-            Simple Pricing and Transparent for Everyone
-          </h1>
-          <h4 className="relative w-[518px] font-heading-h4-small-semi-bold font-[number:var(--heading-h4-small-semi-bold-font-weight)] text-black text-[length:var(--heading-h4-small-semi-bold-font-size)] text-center tracking-[var(--heading-h4-small-semi-bold-letter-spacing)] leading-[var(--heading-h4-small-semi-bold-line-height)] [font-style:var(--heading-h4-small-semi-bold-font-style)]">
-            Flexible Plans to Fit Your Needs
-            <br />
-            Choose the Mi-HEALTH plan that&apos;s right for you or your
-            organization.
-          </h4>
-        </div>
-      </div>
-
-      {/* Pricing cards section */}
-      <div className="relative w-full max-w-[1214px]">
         {/* Pricing toggle */}
-        <div className="flex justify-center mb-[104px]">
+        <div className="flex justify-center">
           <ToggleGroup
             type="single"
             defaultValue="monthly"
-            className="bg-neutralgray-200 p-0.5 rounded-[10px]"
+            className="bg-neutral-200 p-1 rounded-xl"
           >
             <ToggleGroupItem
               value="monthly"
-              className="w-[237px] px-6 py-2 rounded-[8px_0px_0px_8px] border border-solid border-slate-300 shadow-shadow-XS data-[state=on]:bg-neutral-gray-100 data-[state=off]:bg-shadeswhite"
+              className="flex-1 px-6 py-3 rounded-lg text-sm font-medium data-[state=on]:bg-white data-[state=on]:shadow-sm transition-all"
             >
-              <span className="text-neutral-gray-500 data-[state=on]:text-neutral-gray-500 data-[state=off]:text-neutral-gray-900 text-xl leading-[24.0px] [font-family:'Inter',Helvetica] font-medium tracking-[0] whitespace-nowrap">
-                Monthly Pricing
-              </span>
+              {t.monthly}
             </ToggleGroupItem>
             <ToggleGroupItem
               value="annual"
-              className="w-[222px] px-6 py-2 rounded-[0px_8px_8px_0px] border border-solid border-slate-300 data-[state=on]:bg-neutral-gray-100 data-[state=off]:bg-shadeswhite"
+              className="flex-1 px-6 py-3 rounded-lg text-sm font-medium data-[state=on]:bg-white data-[state=on]:shadow-sm transition-all"
             >
-              <span className="text-neutral-gray-900 data-[state=on]:text-neutral-gray-500 data-[state=off]:text-neutral-gray-900 text-xl leading-[24.0px] [font-family:'Inter',Helvetica] font-medium tracking-[0] whitespace-nowrap">
-                Annual Pricing
-              </span>
+              {t.annual}
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
 
         {/* Pricing cards */}
-        <div className="flex items-end gap-6">
-          {pricingPlans.map((plan) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {pricingPlans.map((plan, index) => (
             <Card
               key={plan.id}
-              className={`flex flex-col flex-1 ${plan.bgColor} rounded-2xl border border-solid ${plan.id === "pro" ? "border-[#5f626b]" : "border-slate-300"}`}
+              className={`relative bg-white border-neutral-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in ${
+                plan.popular ? 'ring-2 ring-project-blue' : ''
+              }`}
+              style={{ animationDelay: `${index * 200}ms` }}
             >
-              <CardContent className="flex flex-col gap-6 p-5 pt-7">
-                <div className="flex flex-col gap-3">
-                  <div className="flex flex-col gap-4">
-                    <div className="flex flex-col gap-2">
-                      <div className="flex flex-col gap-2">
-                        <img
-                          className="w-[57.06px] h-[50px]"
-                          alt={`${plan.name} icon`}
-                          src={plan.iconSrc}
-                        />
-                        <div className="flex flex-col gap-2">
-                          <h3
-                            className={`mt-[-1.00px] font-heading-h5-bold font-[number:var(--heading-h5-bold-font-weight)] ${plan.textColor} text-[length:var(--heading-h5-bold-font-size)] tracking-[var(--heading-h5-bold-letter-spacing)] leading-[var(--heading-h5-bold-line-height)] [font-style:var(--heading-h5-bold-font-style)]`}
-                          >
-                            {plan.name}
-                          </h3>
-
-                          {plan.popular && (
-                            <Badge className="w-fit justify-center px-2.5 py-0.5 bg-primaryblue-50 rounded border border-solid border-[#46d5fa] text-project-green">
-                              <span className="font-footer-CAP font-[number:var(--footer-CAP-font-weight)] text-[length:var(--footer-CAP-font-size)] tracking-[var(--footer-CAP-letter-spacing)] leading-[var(--footer-CAP-line-height)] whitespace-nowrap [font-style:var(--footer-CAP-font-style)]">
-                                POPULAR TARIFFS
-                              </span>
-                            </Badge>
-                          )}
-
-                          <p
-                            className={`font-heading-h6-semi-bold font-[number:var(--heading-h6-semi-bold-font-weight)] ${plan.secondaryTextColor} text-[length:var(--heading-h6-semi-bold-font-size)] tracking-[var(--heading-h6-semi-bold-letter-spacing)] leading-[var(--heading-h6-semi-bold-line-height)] [font-style:var(--heading-h6-semi-bold-font-style)]`}
-                          >
-                            {plan.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex items-end gap-3">
-                      <div className="inline-flex items-end justify-center gap-1">
-                        <span
-                          className={`mt-[-1.00px] [font-family:'Inter',Helvetica] font-bold ${plan.id === "pro" ? "bg-[linear-gradient(55deg,rgba(251,130,24,1)_22%,rgba(241,54,54,1)_51%,rgba(154,29,203,1)_75%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] text-transparent" : plan.textColor} text-7xl tracking-[-2.88px] leading-[54px] whitespace-nowrap`}
-                        >
-                          {plan.price}
-                        </span>
-                        <span
-                          className={`${plan.id === "pro" ? "bg-[linear-gradient(55deg,rgba(251,130,24,1)_22%,rgba(241,54,54,1)_51%,rgba(154,29,203,1)_75%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] text-transparent" : plan.textColor} text-[23px] tracking-[-0.92px] leading-[27.6px] [font-family:'Inter',Helvetica] font-bold whitespace-nowrap`}
-                        >
-                          {plan.currency}
-                        </span>
-                      </div>
-                      <p
-                        className={`flex-1 [font-family:'Inter',Helvetica] font-medium ${plan.id === "pro" ? "text-neutral-gray-300" : "text-neutral-gray-400"} text-base tracking-[0] leading-[19.2px]`}
-                      >
-                        Per Users
-                        <br />
-                        per Months
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-3">
-                    <Button className="w-full bg-project-green text-shadeswhite hover:bg-project-green/90 rounded-lg">
-                      <span className="[font-family:'Inter',Helvetica] font-medium text-lg tracking-[0] leading-[22px] whitespace-nowrap">
-                        Get Started
-                      </span>
-                    </Button>
-                    <Button
-                      variant={plan.id === "pro" ? "default" : "outline"}
-                      className={`w-full ${plan.id === "pro" ? "bg-shadeswhite text-neutral-gray-900 hover:bg-shadeswhite/90" : "border-slate-300 shadow-shadow-XS"} rounded-lg`}
-                    >
-                      <span className="[font-family:'Inter',Helvetica] font-medium text-lg tracking-[0] leading-[22px] whitespace-nowrap">
-                        {plan.id === "pro"
-                          ? "Try For Free for 30 Days"
-                          : "Contact Sales"}
-                      </span>
-                    </Button>
+              {plan.popular && (
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-project-blue text-white px-4 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                    <Star className="w-3 h-3" />
+                    {t.plans.pro.popular}
                   </div>
                 </div>
+              )}
 
-                <Separator className="w-full h-px" />
+              <CardContent className="p-6 md:p-8 space-y-6">
+                {/* Plan header */}
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-project-blue to-project-green rounded-xl flex items-center justify-center text-white">
+                    {plan.icon}
+                  </div>
 
-                <div className="flex flex-col gap-[29px] pt-6">
-                  <div className="flex flex-col gap-2">
-                    <h4
-                      className={`${plan.textColor} mt-[-1.00px] font-heading-h5-bold font-[number:var(--heading-h5-bold-font-weight)] text-[length:var(--heading-h5-bold-font-size)] tracking-[var(--heading-h5-bold-letter-spacing)] leading-[var(--heading-h5-bold-line-height)] [font-style:var(--heading-h5-bold-font-style)]`}
-                    >
-                      Characteristics
-                    </h4>
-                    <p
-                      className={`font-heading-h6-semi-bold font-[number:var(--heading-h6-semi-bold-font-weight)] ${plan.secondaryTextColor} text-[length:var(--heading-h6-semi-bold-font-size)] tracking-[var(--heading-h6-semi-bold-letter-spacing)] leading-[var(--heading-h6-semi-bold-line-height)] [font-style:var(--heading-h6-semi-bold-font-style)]`}
-                    >
-                      These are the functionalities you will obtain
+                  <div className="space-y-2">
+                    <h3 className="text-h5 font-bold text-neutral-900">
+                      {plan.name}
+                    </h3>
+                    <p className="text-body-sm text-neutral-600">
+                      {plan.description}
                     </p>
                   </div>
 
-                  <div className="flex flex-col gap-4 py-4">
-                    {plan.features.map((feature, index) => (
+                  {/* Price */}
+                  <div className="flex items-end gap-2">
+                    <span className={`text-5xl font-bold ${
+                      plan.popular 
+                        ? 'bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent'
+                        : 'text-neutral-900'
+                    }`}>
+                      {plan.price}
+                    </span>
+                    <span className={`text-lg font-semibold ${
+                      plan.popular 
+                        ? 'bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent'
+                        : 'text-neutral-900'
+                    }`}>
+                      {plan.currency}
+                    </span>
+                    <span className="text-body text-neutral-500 mb-1">
+                      {t.perUser}
+                    </span>
+                  </div>
+                </div>
+
+                {/* CTA buttons */}
+                <div className="space-y-3">
+                  <Button className="w-full btn btn-primary">
+                    {t.getStarted}
+                  </Button>
+                  <Button className="w-full btn btn-secondary">
+                    {plan.popular ? t.tryFree : t.contactSales}
+                  </Button>
+                </div>
+
+                <Separator />
+
+                {/* Features */}
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <h4 className="text-h6 font-semibold text-neutral-900">
+                      {t.characteristics}
+                    </h4>
+                    <p className="text-body-sm text-neutral-600">
+                      {t.characteristicsDesc}
+                    </p>
+                  </div>
+
+                  <div className="space-y-3">
+                    {plan.features.map((feature, featureIndex) => (
                       <div
-                        key={`${plan.id}-feature-${index}`}
-                        className="flex items-center gap-3"
+                        key={featureIndex}
+                        className="flex items-start gap-3"
                       >
-                        <img
-                          className="w-7 h-7"
-                          alt="Checkbox"
-                          src="/checkbox.svg"
-                        />
-                        <p
-                          className={`flex-1 [font-family:'Inter',Helvetica] font-medium ${plan.id === "pro" ? "text-neutral-gray-300" : "text-neutral-gray-500"} text-base tracking-[0] leading-6`}
-                        >
+                        <div className="w-5 h-5 bg-project-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-project-blue" />
+                        </div>
+                        <p className="text-body-sm text-neutral-700">
                           {feature}
                         </p>
                       </div>
@@ -261,6 +185,6 @@ export const PricingSection = (): JSX.Element => {
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };

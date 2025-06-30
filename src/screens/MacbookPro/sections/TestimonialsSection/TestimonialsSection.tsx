@@ -1,102 +1,87 @@
 import React from "react";
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "../../../../components/ui/avatar";
-import { Badge } from "../../../../components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "../../../../components/ui/avatar";
 import { Card, CardContent } from "../../../../components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "../../../../components/ui/carousel";
+import { Section } from "../../../../components/ui/Section";
+import { SectionHeader } from "../../../../components/ui/SectionHeader";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../../../../components/ui/carousel";
+import { useLanguage } from "../../../../hooks/useLanguage";
+import { translations } from "../../../../utils/translations";
 
 export const TestimonialsSection = (): JSX.Element => {
+  const { language } = useLanguage();
+  const t = translations[language].testimonials;
+
   const testimonials = [
     {
-      quote:
-        "Mi-HEALTH has truly given me control over my medical history. No more lost papers or forgotten details – it's all there, accessible from my phone. A game-changer for my chronic condition management!",
-      name: "Dev-Guy UIX",
-      title: "UX Designer, Byem Assi Acca Cia",
-      avatar: "/ellipse-698.png",
+      quote: t.quotes[0],
+      name: "Dr. Marie Dubois",
+      title: language === 'en' ? "Family Physician, Yaoundé" : "Médecin de Famille, Yaoundé",
+      avatar: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
     },
     {
-      quote:
-        "The ease of sharing information with different specialists means I finally feel understood by my entire care team. My family history and allergies are always at their fingertips, leading to better, safer care.",
-      name: "Dev-Guy UIX",
-      title: "UX Designer, Byem Assi Acca Cia",
-      avatar: "/ellipse-699.png",
+      quote: t.quotes[1],
+      name: "Jean-Paul Mbarga",
+      title: language === 'en' ? "Patient, Douala" : "Patient, Douala",
+      avatar: "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
     },
     {
-      quote:
-        "The ease of sharing information with different specialists means I finally feel understood by my entire care team. My family history and allergies are always at their fingertips, leading to better, safer care.",
-      name: "Dev-Guy UIX",
-      title: "UX Designer, Byem Assi Acca Cia",
-      avatar: "/ellipse-699-1.png",
+      quote: t.quotes[2],
+      name: "Dr. Fatima Nkomo",
+      title: language === 'en' ? "Cardiologist, Bamenda" : "Cardiologue, Bamenda",
+      avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&dpr=1",
     },
   ];
 
   return (
-    <section className="flex flex-col items-center gap-16 py-16 w-full bg-shadeswhite">
-      <div className="flex items-center justify-center gap-3 px-3.5 py-1.5 rounded-[999px] border border-solid border-slate-200 [background:radial-gradient(50%_50%_at_50%_50%,rgba(218,249,251,1)_0%,rgba(230,246,247,1)_13%,rgba(244,254,255,1)_30%,rgba(251,253,253,1)_58%,rgba(236,247,252,1)_68%,rgba(238,244,246,1)_80%,rgba(218,249,251,1)_100%)] relative overflow-hidden">
-        <Badge className="gap-1 px-3 py-0 bg-shadeswhite rounded-[100px] border-[0.75px] border-solid border-[#bbcaf3] flex items-center">
-          <div className="w-[5px] h-[5px] bg-project-blue rounded-[100px] blur-[1.5px]" />
-          <span className="font-paragraph-p2-regular text-project-blue">
-            NHA
-          </span>
-        </Badge>
+    <Section id="testimonials" background="secondary">
+      <div className="space-y-12 md:space-y-16">
+        <SectionHeader
+          badge={t.badge}
+          title={t.title}
+          centered
+        />
 
-        <div className="flex-1 font-paragraph-p1-regular text-[#1e293bbf] text-center">
-          Get Exclusive Access To Our Future Release
+        <div className="max-w-4xl mx-auto">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {testimonials.map((testimonial, index) => (
+                <CarouselItem key={index}>
+                  <Card className="bg-white border-neutral-200 shadow-lg">
+                    <CardContent className="p-8 md:p-12 text-center space-y-8">
+                      <blockquote className="text-h4 md:text-h3 font-medium text-neutral-900 leading-relaxed">
+                        "{testimonial.quote}"
+                      </blockquote>
+
+                      <div className="flex items-center justify-center gap-4">
+                        <Avatar className="w-16 h-16">
+                          <AvatarImage
+                            src={testimonial.avatar}
+                            alt={testimonial.name}
+                          />
+                          <AvatarFallback className="bg-project-blue text-white font-semibold">
+                            {testimonial.name.split(' ').map(n => n[0]).join('')}
+                          </AvatarFallback>
+                        </Avatar>
+
+                        <div className="text-left">
+                          <div className="text-h6 font-semibold text-neutral-900">
+                            {testimonial.name}
+                          </div>
+                          <div className="text-body text-neutral-600">
+                            {testimonial.title}
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 bg-white border-neutral-200 hover:bg-neutral-50" />
+            <CarouselNext className="right-0 bg-white border-neutral-200 hover:bg-neutral-50" />
+          </Carousel>
         </div>
-
-        <div className="absolute w-[26px] h-[199px] top-[-79px] left-[-35px] bg-[#fffffff2] rotate-[26.88deg] blur-[2.5px]" />
       </div>
-
-      <h2 className="font-heading-h4-semi-bold text-project-blue text-center max-w-3xl">
-        Hear how Mi-HEALTH is transforming healthcare for patients and providers
-        in Cameroon.
-      </h2>
-
-      <Carousel className="w-full max-w-[731px]">
-        <CarouselContent>
-          {testimonials.map((testimonial, index) => (
-            <CarouselItem key={index}>
-              <Card className="border-none shadow-none">
-                <CardContent className="flex flex-col items-center gap-8 p-0">
-                  <blockquote className="font-heading-h4-semi-bold text-black text-center">
-                    &quot;{testimonial.quote}&quot;
-                  </blockquote>
-
-                  <div className="flex items-center gap-[3px]">
-                    <Avatar className="w-[60px] h-[60px]">
-                      <AvatarImage
-                        src={testimonial.avatar}
-                        alt="Testimonial author"
-                      />
-                      <AvatarFallback>UI</AvatarFallback>
-                    </Avatar>
-
-                    <div className="flex flex-col w-[283px] items-start gap-3">
-                      <div className="font-subheading-semi-bold text-black">
-                        {testimonial.name}
-                      </div>
-                      <div className="font-paragraph-p3-regular text-black">
-                        {testimonial.title}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="left-0 bg-neutral-gray-100 opacity-75 rounded-[120px] w-12 h-12" />
-        <CarouselNext className="right-0 bg-neutral-gray-100 opacity-75 rounded-[120px] w-12 h-12" />
-      </Carousel>
-    </section>
+    </Section>
   );
 };

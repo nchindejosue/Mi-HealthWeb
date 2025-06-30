@@ -7,13 +7,15 @@ export const useLanguage = () => {
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage) {
+    console.log('useLanguage - Loaded from localStorage:', savedLanguage);
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'fr')) {
       setLanguage(savedLanguage);
     }
   }, []);
 
   const toggleLanguage = () => {
     const newLanguage = language === 'en' ? 'fr' : 'en';
+    console.log('useLanguage - Toggling from', language, 'to', newLanguage);
     setLanguage(newLanguage);
     localStorage.setItem('language', newLanguage);
   };
