@@ -1,0 +1,410 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --caption-semi-bold-font-family: "Inter", Helvetica;
+  --caption-semi-bold-font-size: 12px;
+  --caption-semi-bold-font-style: normal;
+  --caption-semi-bold-font-weight: 600;
+  --caption-semi-bold-letter-spacing: 0px;
+  --caption-semi-bold-line-height: 18px;
+  --colorsmint: rgba(0, 199, 190, 1);
+  --colorsorange: rgba(255, 149, 0, 1);
+  --colorsteal: rgba(48, 176, 199, 1);
+  --dark-modedark-mode-50: rgba(95, 98, 107, 1);
+  --errorred-400: rgba(248, 113, 113, 1);
+  --errorred-600: rgba(220, 38, 38, 1);
+  --footer-CAP-font-family: "Inter", Helvetica;
+  --footer-CAP-font-size: 10px;
+  --footer-CAP-font-style: normal;
+  --footer-CAP-font-weight: 600;
+  --footer-CAP-letter-spacing: 0.8px;
+  --footer-CAP-line-height: 14px;
+  --heading-h1-semi-bold-font-family: "Inter", Helvetica;
+  --heading-h1-semi-bold-font-size: 48px;
+  --heading-h1-semi-bold-font-style: normal;
+  --heading-h1-semi-bold-font-weight: 600;
+  --heading-h1-semi-bold-letter-spacing: -1.92px;
+  --heading-h1-semi-bold-line-height: 56px;
+  --heading-h2-bold-font-family: "Inter", Helvetica;
+  --heading-h2-bold-font-size: 39px;
+  --heading-h2-bold-font-style: normal;
+  --heading-h2-bold-font-weight: 700;
+  --heading-h2-bold-letter-spacing: -1.56px;
+  --heading-h2-bold-line-height: 47px;
+  --heading-h2-small-bold-font-family: "Inter", Helvetica;
+  --heading-h2-small-bold-font-size: 33px;
+  --heading-h2-small-bold-font-style: normal;
+  --heading-h2-small-bold-font-weight: 700;
+  --heading-h2-small-bold-letter-spacing: -0.66px;
+  --heading-h2-small-bold-line-height: 40px;
+  --heading-h2-small-semi-bold-font-family: "Inter", Helvetica;
+  --heading-h2-small-semi-bold-font-size: 33px;
+  --heading-h2-small-semi-bold-font-style: normal;
+  --heading-h2-small-semi-bold-font-weight: 600;
+  --heading-h2-small-semi-bold-letter-spacing: -0.66px;
+  --heading-h2-small-semi-bold-line-height: 40px;
+  --heading-h3-semi-bold-font-family: "Inter", Helvetica;
+  --heading-h3-semi-bold-font-size: 33px;
+  --heading-h3-semi-bold-font-style: normal;
+  --heading-h3-semi-bold-font-weight: 600;
+  --heading-h3-semi-bold-letter-spacing: -0.66px;
+  --heading-h3-semi-bold-line-height: 40px;
+  --heading-h3-small-bold-font-family: "Inter", Helvetica;
+  --heading-h3-small-bold-font-size: 28px;
+  --heading-h3-small-bold-font-style: normal;
+  --heading-h3-small-bold-font-weight: 700;
+  --heading-h3-small-bold-letter-spacing: -0.5600000000000002px;
+  --heading-h3-small-bold-line-height: 34px;
+  --heading-h3-small-semi-bold-font-family: "Inter", Helvetica;
+  --heading-h3-small-semi-bold-font-size: 28px;
+  --heading-h3-small-semi-bold-font-style: normal;
+  --heading-h3-small-semi-bold-font-weight: 700;
+  --heading-h3-small-semi-bold-letter-spacing: -0.5600000000000002px;
+  --heading-h3-small-semi-bold-line-height: 34px;
+  --heading-h4-bold-font-family: "Inter", Helvetica;
+  --heading-h4-bold-font-size: 28px;
+  --heading-h4-bold-font-style: normal;
+  --heading-h4-bold-font-weight: 700;
+  --heading-h4-bold-letter-spacing: -0.5600000000000002px;
+  --heading-h4-bold-line-height: 34px;
+  --heading-h4-semi-bold-font-family: "Inter", Helvetica;
+  --heading-h4-semi-bold-font-size: 28px;
+  --heading-h4-semi-bold-font-style: normal;
+  --heading-h4-semi-bold-font-weight: 600;
+  --heading-h4-semi-bold-letter-spacing: -0.5600000000000002px;
+  --heading-h4-semi-bold-line-height: 34px;
+  --heading-h4-small-semi-bold-font-family: "Inter", Helvetica;
+  --heading-h4-small-semi-bold-font-size: 23px;
+  --heading-h4-small-semi-bold-font-style: normal;
+  --heading-h4-small-semi-bold-font-weight: 600;
+  --heading-h4-small-semi-bold-letter-spacing: -0.46px;
+  --heading-h4-small-semi-bold-line-height: 28px;
+  --heading-h5-bold-font-family: "Inter", Helvetica;
+  --heading-h5-bold-font-size: 23px;
+  --heading-h5-bold-font-style: normal;
+  --heading-h5-bold-font-weight: 700;
+  --heading-h5-bold-letter-spacing: -0.46px;
+  --heading-h5-bold-line-height: 28px;
+  --heading-h5-semi-bold-font-family: "Inter", Helvetica;
+  --heading-h5-semi-bold-font-size: 23px;
+  --heading-h5-semi-bold-font-style: normal;
+  --heading-h5-semi-bold-font-weight: 600;
+  --heading-h5-semi-bold-letter-spacing: -0.46px;
+  --heading-h5-semi-bold-line-height: 28px;
+  --heading-h6-semi-bold-font-family: "Inter", Helvetica;
+  --heading-h6-semi-bold-font-size: 19px;
+  --heading-h6-semi-bold-font-style: normal;
+  --heading-h6-semi-bold-font-weight: 600;
+  --heading-h6-semi-bold-letter-spacing: -0.38px;
+  --heading-h6-semi-bold-line-height: 23px;
+  --light-green: rgba(246, 255, 254, 1);
+  --neutral-gray-100: rgba(241, 245, 249, 1);
+  --neutral-gray-300: rgba(203, 213, 225, 1);
+  --neutral-gray-400: rgba(148, 163, 184, 1);
+  --neutral-gray-50: rgba(248, 250, 252, 1);
+  --neutral-gray-500: rgba(100, 116, 139, 1);
+  --neutral-gray-600: rgba(71, 85, 105, 1);
+  --neutral-gray-700: rgba(51, 65, 85, 1);
+  --neutral-gray-900: rgba(15, 23, 42, 1);
+  --neutralgray-200: rgba(226, 232, 240, 1);
+  --paragraph-p1-regular-font-family: "Inter", Helvetica;
+  --paragraph-p1-regular-font-size: 14px;
+  --paragraph-p1-regular-font-style: normal;
+  --paragraph-p1-regular-font-weight: 400;
+  --paragraph-p1-regular-letter-spacing: 0px;
+  --paragraph-p1-regular-line-height: 17px;
+  --paragraph-p2-regular-font-family: "Inter", Helvetica;
+  --paragraph-p2-regular-font-size: 16px;
+  --paragraph-p2-regular-font-style: normal;
+  --paragraph-p2-regular-font-weight: 400;
+  --paragraph-p2-regular-letter-spacing: 0px;
+  --paragraph-p2-regular-line-height: 24px;
+  --paragraph-p2-semi-bold-font-family: "Inter", Helvetica;
+  --paragraph-p2-semi-bold-font-size: 16px;
+  --paragraph-p2-semi-bold-font-style: normal;
+  --paragraph-p2-semi-bold-font-weight: 600;
+  --paragraph-p2-semi-bold-letter-spacing: 0px;
+  --paragraph-p2-semi-bold-line-height: 24px;
+  --paragraph-p3-regular-font-family: "Inter", Helvetica;
+  --paragraph-p3-regular-font-size: 18px;
+  --paragraph-p3-regular-font-style: normal;
+  --paragraph-p3-regular-font-weight: 400;
+  --paragraph-p3-regular-letter-spacing: 0px;
+  --paragraph-p3-regular-line-height: 22px;
+  --paragraph-p3-semi-bold-font-family: "Inter", Helvetica;
+  --paragraph-p3-semi-bold-font-size: 18px;
+  --paragraph-p3-semi-bold-font-style: normal;
+  --paragraph-p3-semi-bold-font-weight: 600;
+  --paragraph-p3-semi-bold-letter-spacing: 0px;
+  --paragraph-p3-semi-bold-line-height: 22px;
+  --primaryblue-100: rgba(187, 202, 243, 1);
+  --primaryblue-50: rgba(232, 237, 251, 1);
+  --project-blue: rgba(5, 165, 206, 1);
+  --project-green: rgba(93, 187, 173, 1);
+  --project-primary-dark: rgba(5, 40, 49, 1);
+  --shade-project-blue: rgba(10, 145, 180, 1);
+  --shadesblack: rgba(0, 0, 0, 1);
+  --shadeswhite: rgba(255, 255, 255, 1);
+  --shadow-XS: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+  --subheading-semi-bold-font-family: "Inter", Helvetica;
+  --subheading-semi-bold-font-size: 20px;
+  --subheading-semi-bold-font-style: normal;
+  --subheading-semi-bold-font-weight: 600;
+  --subheading-semi-bold-letter-spacing: 0px;
+  --subheading-semi-bold-line-height: 28px;
+  --tint-project-blue: rgba(70, 214, 251, 1);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: transparent;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: transparent;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(5, 165, 206, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(5, 165, 206, 0.6), 0 0 30px rgba(5, 165, 206, 0.4);
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.animate-slide-left {
+  animation: slide-left 0.8s ease-out;
+}
+
+.animate-slide-right {
+  animation: slide-right 0.8s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-text-glow {
+  animation: text-glow 2s ease-in-out infinite;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Animation delays */
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animation-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animation-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2000ms;
+}
